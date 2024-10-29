@@ -17,3 +17,7 @@ def words_to_minutes (battle_count):
     print (minutes)
     return minutes
 
+from timer import startCountdown
+
+# Run timer for 120 seconds as an example
+startCountdown(120)
