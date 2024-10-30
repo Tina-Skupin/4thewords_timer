@@ -1,6 +1,7 @@
 import tkinter as tk
 
-def start_countdown(seconds):
+#programming ongoing adding a second dummy variable
+def start_countdown(seconds, on_finish_callback):
     def countdown(seconds_remaining):  
         if seconds_remaining > 0:
             # Properly divide and convert
@@ -13,6 +14,8 @@ def start_countdown(seconds):
             root.after(1000, countdown, seconds_remaining - 1)
         else:
             label.config(text="mob's down!")
+            on_finish_callback()
+    
 
     root = tk.Tk()
     label = tk.Label(root, font=('Helvetica', 48), text="")
