@@ -17,7 +17,22 @@ def words_to_minutes (battle_count):
     print (minutes)
     return minutes
 
-from timer import startCountdown
+from timer import start_countdown
 
-# Run timer for 120 seconds as an example
-startCountdown(120)
+
+
+def main():
+    # Constants or inputs for this example
+    attack = 100
+    mob_strength = 1000
+
+    # Function calls in sequence
+    battle_count = calculate_actual_battle_count(attack, mob_strength)
+    minutes = words_to_minutes(battle_count)
+    seconds = minutes * 60  # Convert minutes to seconds for the timer
+
+    # Start the countdown with the calculated seconds
+    start_countdown(seconds)
+
+if __name__ == "__main__":
+    main()
