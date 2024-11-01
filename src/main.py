@@ -34,12 +34,15 @@ def calculate_actual_battle_count (attack, mob_strength):
 
 #builds a text for pasting into 4tw
 def create_lorem_ipsum(battle_count):
-    lorem = "starter"
+    lorem = ""
     words = battle_count
     while battle_count > 0:
         lorem = lorem + "ipsum "
         battle_count -=1
-    print (lorem)
+    #print (lorem)
+    with open(r'lorem_ipsum.txt', 'w') as file_object:
+        file_object.write(lorem)
+    print("File written to:", os.path.abspath('lorem_ipsum.txt'))
     return lorem
 
 
@@ -71,10 +74,10 @@ def main():
     #loads saved battle time
     battle_time = load_battle_time()
 
-    #global battle_time
-    # Constants or inputs for this example
-    attack = 100
-    mob_strength = 10
+
+    # HERE GO THE VALUES FOR YOUR INDIVIDUAL FIGHT
+    attack = 117
+    mob_strength = 350
 
     # Function calls in sequence
     battle_count = calculate_actual_battle_count(attack, mob_strength)
